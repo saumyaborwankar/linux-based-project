@@ -1,9 +1,11 @@
+#client needs to run this script to connect to a server
 import socket
 import subprocess
 s=socket.socket()
-serverip=input("Give the server ip:")
-serverport=int(input("Give the port number:"))
-s.connect((serverip,serverport))
+#serverip=input("Give the server ip:")
+#serverport=int(input("Give the port number:"))
+#s.connect((serverip,serverport))
+s.connect(("192.168.43.183",1234))
 print("Type 'stop' if you want to stop")
 while True:
     cmd=input("Give me the command:")
