@@ -4,11 +4,7 @@ import socket
 import subprocess
 import sys
 
-s=socket.socket()
-#serverip=input("Give the server ip:")
-#serverport=int(input("Give the port number:"))
-#s.connect((serverip,serverport))
-s.connect(("192.168.43.183",1234))
+
 
  
 
@@ -44,7 +40,18 @@ try:
 except:
     location=voice_location()
 if location=='remote':
-    user_name,id_add=ssh_connection()
+    user_name,ip_add=ssh_connection()
+    s=socket.socket()
+    print("Say the port number:")
+    port=voice_recognize()
+#serverip=input("Give the server ip:")
+#serverport=int(input("Give the port number:"))
+#s.connect((serverip,serverport))
+	s.connect((id_add,port))
+    while True:
+
+elif location=="local":
+	while True:    
     
 
 
