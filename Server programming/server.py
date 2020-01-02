@@ -1,8 +1,11 @@
 #making a local server using python
+
 import socket
 import subprocess
 s=socket.socket()
+
 #setting permanent port
+
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADD,1)
 ip="192.168.43.183"
 port=1234
@@ -23,4 +26,4 @@ while True:
     clsession[0].send(output)
     i=i+1
     print(output)
-
+    
