@@ -19,7 +19,8 @@ def ssh_connection(user_name="root"):
     if choice_for_y_n==1:
         ssh_connection()
     elif choice_for_y_n==0:
-        return user_name, ip_add    
+        os.system("ssh-keygen ; ssh-copy-id {}@{}".format(username,ip))
+        return "Connected to {}@{}".format(username,ip),user_name,id_add     
     else:
         break
 
@@ -44,11 +45,31 @@ if location=='remote':
     s=socket.socket()
     print("Say the port number:")
     port=voice_recognize()
-#serverip=input("Give the server ip:")
-#serverport=int(input("Give the port number:"))
-#s.connect((serverip,serverport))
+    #serverip=input("Give the server ip:")
+    #serverport=int(input("Give the port number:"))
+    #s.connect((serverip,serverport))
 	s.connect((id_add,port))
     while True:
+        print("""
+            Option 1: Get Date
+            Option 2: Get Cal
+            Option 3: Open cheese
+            Option 4: Take photo and save
+            Option 5: Open Firefox 
+            Option 6: Set Static Ip
+            Option 7: Custom command
+            Option 8: Install python3 and opencv
+            Option 9: See the live stream
+            Option 10: Add a user
+            Option 11: To make a server
+            """)
+        print("Enter a choice :",end="")
+        try:
+            choice=choice()
+        except:
+            choice=choice()
+#executing the choice commands  
+
 
 elif location=="local":
 	while True:    
