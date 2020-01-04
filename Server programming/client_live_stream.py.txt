@@ -1,0 +1,19 @@
+import cv2
+import numpy as np
+import requests
+url=""
+while True:
+	photo_url=requests.get(url)
+#content is in bytes but the data is in binary
+	content=photo_url.content
+
+	photo_byte_bin=bytearray(content)
+#converting into 1D array
+	photo_1D=np.array(photo_byte_bin, dtype=np.uint8)
+	type(photo_1D)
+converting into 3D array
+	cv2.imshow('hello ji',photo)
+	photo=cv2.imdecode(photo_1D)
+	if cv2.waitKey(1)==13:
+		break
+cv2.destroyAllWindows()
