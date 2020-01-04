@@ -53,6 +53,7 @@ Option 8: Install python3 and opencv
 Option 9: See the live stream
 Option 10: Add a user
 Option 11: To make a server
+Option 12: To setup hadoop
 """)
 
 
@@ -181,6 +182,18 @@ while(Stop!="no"):
         elif (Location=="local"):
             print("Strating the local server")
             os.system("python3 /home/crazypikachu/linux-based-project/Server\ programming/server.py")
+    elif(Numberchoice==12):
+        if(Location=="remote"):
+            print("Please check the connectivity")
+            print("Tell me which ip will be the Name node")
+            nn_ip=input()
+            print("Please tell me how many data nodes")
+            dn_len=int(input())
+            nn_ip=[0]
+            for i in range(dn_len):
+                print("Tell me which ip will be the data node")
+                nn_ip[i]=input()
+            
 
     else:
         print("Enter a valid choice ",end="")
